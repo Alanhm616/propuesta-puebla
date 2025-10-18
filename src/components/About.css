@@ -1,0 +1,79 @@
+/* About.css */
+
+/* Sección completa con fondo */
+.about {
+  position: relative;
+  padding: 100px 0;
+  color: #fafafa; /* texto general: blanco suave */
+  font-family: 'Poppins', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Capa de overlay para mejorar la legibilidad del texto */
+.about .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 197, 94, 0.75); /* verde con transparencia (green) */
+  z-index: 1;
+}
+
+/* Grid de imagen + texto */
+.about-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  align-items: center;
+}
+
+/* Imagen de la empresa con efecto flotante y sombra */
+.about-media img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+}
+
+.about-media img:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Texto */
+.about-body h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #b71c1c; /* primary */
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+
+.about-body h4 {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  color: #eab308; /* yellow */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.about-body p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #fafafa; /* texto principal */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-body h2 {
+    font-size: 2rem;
+  }
+  .about-body h4 {
+    font-size: 1.2rem;
+  }
+}
+

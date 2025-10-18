@@ -1,0 +1,126 @@
+/* Form.css */
+.form-section {
+  padding: 80px 20px;
+  background: #fafafaff; /* background de la paleta */
+  display: flex;
+  justify-content: center;
+}
+
+.form-wrap {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+}
+
+.form-card {
+  background: #ffffff; /* blanco para la tarjeta */
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #22c55e 0%, #1e1e1c 100%); /* verde y negro custom */
+  opacity: 0.05;
+  transform: rotate(25deg);
+  z-index: 0;
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #22c55e; /* verde principal */
+  z-index: 1;
+  position: relative;
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  position: relative;
+  flex: 1;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #22c55e; /* verde principal */
+  font-size: 18px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #b71c1c; /* primary */
+  box-shadow: 0 0 10px rgba(183, 28, 28, 0.3);
+}
+
+textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.btn-primary {
+  background-color: #b71c1c; /* primary */
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #cd3d1f; /* primary opaco */
+  transform: scale(1.05);
+}
+
+.sent-badge {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background-color: #22c55e; /* verde principal */
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

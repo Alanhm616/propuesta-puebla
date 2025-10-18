@@ -1,0 +1,83 @@
+.services {
+  padding: 100px 20px;
+  background-color: #f3f7f5;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 3rem;
+  color: #00a34a; /* Verde Puebla Express */
+  margin-bottom: 60px;
+  position: relative;
+  display: inline-block;
+}
+
+.services h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background-color: #00a34a;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.services h2:hover::after {
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: linear-gradient(135deg, #e6f4ee, #ffffff);
+  padding: 40px 25px;
+  border-radius: 25px;
+  width: 300px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(0,163,74,0.05);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.card:hover::before {
+  transform: rotate(0deg);
+  background: rgba(0,163,74,0.08);
+}
+
+.card .icon {
+  font-size: 3.5rem;
+  color: #00a34a;
+  margin-bottom: 25px;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #004d2e;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}

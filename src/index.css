@@ -1,0 +1,32 @@
+/* Global styles, fonts and variables */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+:root{
+  --green: #007F3E;
+  --red: #E30613;
+  --blue: #005BAC;
+  --bg: #F5F5F5;
+  --white: #FFFFFF;
+  --dark: #222222;
+  --card-shadow: 0 15px 40px rgba(14,20,30,0.08);
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+
+html,body,#root{
+  height:100%;
+  font-family: 'Montserrat', sans-serif;
+  color:var(--dark);
+  background:var(--white);
+}
+
+a{ color:inherit; }
+
+.container {
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+/* Smooth scroll for anchors */
+html { scroll-behavior: smooth; }
