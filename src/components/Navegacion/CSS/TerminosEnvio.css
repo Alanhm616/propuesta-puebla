@@ -1,0 +1,125 @@
+.terminos-page {
+  min-height: 70vh;
+  background-color: #ffffff; /* Fondo blanco liso */
+  padding-top: 0; /* No padding extra, ya que el header es fijo */
+}
+
+/* 1. Sección de Cabecera (Hero) */
+.terminos-hero {
+  /* Fondo que imita el estilo de tu Hero: gradiente sutil y amplio */
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.08), #fafafaff);
+  padding: 60px 0 40px; /* Padding reducido en la parte inferior */
+  text-align: center;
+  border-bottom: 2px solid rgba(34, 197, 94, 0.15);
+}
+
+.terminos-hero h1 {
+  font-size: 3.2rem;
+  color: #1e1e1c; /* Negro personalizado */
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.terminos-hero p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 2. Sección de Contenido Principal */
+.terminos-content {
+  padding: 60px 0;
+}
+
+.terminos-content .container {
+  max-width: 950px; /* Ancho cómodo para texto legal */
+}
+
+/* Estilo para cada bloque de contenido (Definiciones, Obligaciones, etc.) */
+.terminos-block {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-left: 4px solid #b71c1c; /* Borde vertical Rojo/Primario */
+  background: #fcfcfc;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.terminos-block h2 {
+  font-size: 1.9rem;
+  color: #22c55e; /* Verde principal */
+  margin-bottom: 15px;
+  font-weight: 700;
+  padding-left: 10px; /* Espacio para separar del borde */
+}
+
+/* Subtítulos dentro de los bloques*/
+.terminos-block h3 {
+  font-size: 1.3rem;
+  color: #1e1e1c;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.terminos-block p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Estilo para listas (Exclusiones) */
+.terminos-block ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.terminos-block ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  padding-left: 20px;
+  position: relative;
+}
+
+.terminos-block ul li::before {
+  content: "•";
+  color: #b71c1c; /* Rojo en el punto */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.terminos-block .legal-links a {
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.terminos-block .legal-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .terminos-hero h1 {
+    font-size: 2.2rem;
+  }
+  .terminos-hero p {
+    font-size: 1rem;
+  }
+  .terminos-content {
+    padding: 40px 15px;
+  }
+  .terminos-block {
+    padding: 15px;
+  }
+  .terminos-block h2 {
+    font-size: 1.6rem;
+  }
+}

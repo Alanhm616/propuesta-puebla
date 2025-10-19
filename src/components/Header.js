@@ -1,17 +1,38 @@
 import React, { useState } from "react";
+
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 import logo from "../assets/logo.png";
 import ModalRastreo from "./ModalRastreo";
 
 const Header = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const location = useLocation();
 
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
 
+  const handleNavLinkClick = (e, targetId) => {
+    if (location.pathname !== "/") {
+      return;
+    }
+
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleLogoClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
-      {/* Top bar con información rápida */}
       <div className="topbar">
         <div className="container topbar-inner">
           <div className="top-left">
@@ -33,27 +54,47 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Header principal */}
       <header className="site-header">
         <div className="container header-inner">
           <div className="brand">
             {logo ? (
-              <a href="#hero" className="brand-link">
+              <Link to="/" className="brand-link" onClick={handleLogoClick}>
                 <img src={logo} alt="Puebla Express" className="brand-logo" />
-              </a>
+              </Link>
             ) : (
-              <a href="#hero" className="brand-text">Puebla Express</a>
+              <Link to="/" className="brand-text" onClick={handleLogoClick}>
+                Puebla Express
+              </Link>
             )}
           </div>
 
+          {/* Navegación Desktop */}
           <nav className="nav">
-            <a href="#hero">Inicio</a>
-            <a href="#welcome">Bienvenidos</a>
-            <a href="#services">Servicios</a>
-            <a href="#about">Acerca</a>
-            <a href="#insurance">Seguro</a>
+            <Link to="/" onClick={(e) => handleNavLinkClick(e, "hero")}>
+              Inicio
+            </Link>
+            <Link to="/" onClick={(e) => handleNavLinkClick(e, "welcome")}>
+              Bienvenidos
+            </Link>
+            <Link to="/" onClick={(e) => handleNavLinkClick(e, "services")}>
+              Servicios
+            </Link>
+            <Link to="/" onClick={(e) => handleNavLinkClick(e, "about")}>
+              Acerca
+            </Link>
+            <Link to="/" onClick={(e) => handleNavLinkClick(e, "insurance")}>
+              Seguro
+            </Link>
+
+            <Link to="/cobertura-usa">COBERTURA en USA</Link>
+            <Link to="/importaciones">ONLINE Importaciones</Link>
+            <Link to="/terminos">Términos y Condiciones de Envío</Link>
+            <Link to="/historia">HISTORIA</Link>
+
             {/* Botón de Rastreo con Modal */}
-            <button className="btn-ghost" onClick={handleOpenModal}>Rastreo</button>
+            <button className="btn-ghost" onClick={handleOpenModal}>
+              Rastreo
+            </button>
           </nav>
 
           {/* Menú móvil */}
@@ -63,13 +104,31 @@ const Header = () => {
               <span></span>
             </label>
             <div className="mobile-menu">
-              <a href="#hero">Inicio</a>
-              <a href="#welcome">Bienvenidos</a>
-              <a href="#services">Servicios</a>
-              <a href="#about">Acerca</a>
-              <a href="#insurance">Seguro</a>
+              <Link to="/" onClick={(e) => handleNavLinkClick(e, "hero")}>
+                Inicio
+              </Link>
+              <Link to="/" onClick={(e) => handleNavLinkClick(e, "welcome")}>
+                Bienvenidos
+              </Link>
+              <Link to="/" onClick={(e) => handleNavLinkClick(e, "services")}>
+                Servicios
+              </Link>
+              <Link to="/" onClick={(e) => handleNavLinkClick(e, "about")}>
+                Acerca
+              </Link>
+              <Link to="/" onClick={(e) => handleNavLinkClick(e, "insurance")}>
+                Seguro
+              </Link>
+
+              <Link to="/cobertura-usa">COBERTURA en USA</Link>
+              <Link to="/importaciones">ONLINE Importaciones</Link>
+              <Link to="/terminos">Términos y Condiciones de Envío</Link>
+              <Link to="/historia">HISTORIA</Link>
+
               {/* Botón móvil Rastreo */}
-              <button className="mobile-cta" onClick={handleOpenModal}>Rastreo</button>
+              <button className="mobile-cta" onClick={handleOpenModal}>
+                Rastreo
+              </button>
             </div>
           </div>
         </div>
@@ -82,5 +141,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
