@@ -73,18 +73,6 @@ const Header = () => {
             <Link to="/" onClick={(e) => handleNavLinkClick(e, "hero")}>
               Inicio
             </Link>
-            <Link to="/" onClick={(e) => handleNavLinkClick(e, "welcome")}>
-              Bienvenidos
-            </Link>
-            <Link to="/" onClick={(e) => handleNavLinkClick(e, "services")}>
-              Servicios
-            </Link>
-            <Link to="/" onClick={(e) => handleNavLinkClick(e, "about")}>
-              Acerca
-            </Link>
-            <Link to="/" onClick={(e) => handleNavLinkClick(e, "insurance")}>
-              Seguro
-            </Link>
 
             <Link to="/cobertura-usa">COBERTURA en USA</Link>
             <Link to="/importaciones">ONLINE Importaciones</Link>

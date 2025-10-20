@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-import Hero from "./components/Hero";
 import Welcome from "./components/Welcome";
+import Hero from "./components/Hero";
 import Services from "./components/Services";
 import About from "./components/About";
 import Form from "./components/Form";
@@ -18,8 +18,8 @@ import TerminosEnvio from "./components/Navegacion/TerminosEnvio";
 
 const HomePage = () => (
   <main>
-    <Hero />
     <Welcome />
+    <Hero />
     <Services />
     <About />
     <Form />
