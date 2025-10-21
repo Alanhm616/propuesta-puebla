@@ -1,19 +1,48 @@
 import React from "react";
-
 import "./CSS/TerminosEnvio.css";
+import { motion } from "framer-motion";
+
+const blockVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 const TerminosEnvio = () => {
   return (
     <div className="terminos-page">
       <section className="terminos-hero">
         <div className="container">
-          <h1>Términos y Condiciones de Envío</h1>
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Términos y Condiciones de Envío
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          ></motion.p>
         </div>
       </section>
 
       <section className="terminos-content">
         <div className="container">
-          <div className="terminos-block">
+          <motion.div
+            className="terminos-block"
+            variants={blockVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <h2>Definiciones</h2>
             <p>
               En esta Guía (Folio), "nosotros", "nuestro" y "Puebla Express" se
@@ -46,9 +75,15 @@ const TerminosEnvio = () => {
               de aceptar el embarque; nuestro nombre impreso en esta Guía será
               suficiente para constituir nuestra firma.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="terminos-block">
+          <motion.div
+            className="terminos-block"
+            variants={blockVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <h2>Tus obligaciones</h2>
             <p>
               Usted garantiza que cada artículo del embarque está descrito
@@ -60,9 +95,15 @@ const TerminosEnvio = () => {
               se encuentra empaquetado para asegurar un transporte seguro con un
               cuidado razonable en su manipulación.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="terminos-block">
+          <motion.div
+            className="terminos-block"
+            variants={blockVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <h2>Artículos no aceptables para el transporte</h2>
             <p>
               No aceptamos el transporte de dinero (incluyendo pero no
@@ -91,9 +132,15 @@ const TerminosEnvio = () => {
               el lugar de partida, y la dirección del destinatario enumerada en
               la cara de esta Guía es el lugar de destino.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="terminos-block">
+          <motion.div
+            className="terminos-block"
+            variants={blockVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <h2>Seguro (aseguranza) para su Envío</h2>
             <h3>Prima del Seguro</h3>
             <p>
@@ -143,9 +190,15 @@ const TerminosEnvio = () => {
               motos, cuatrimotos, artículos frágiles, televisiones que no viajen
               en su empaque original de fábrica.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="terminos-block">
+          <motion.div
+            className="terminos-block"
+            variants={blockVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <h2>Responsabilidades que no asumimos</h2>
             <p>
               Sujeto a las condiciones de contrato contenidas en esta guía, o en
@@ -181,19 +234,25 @@ const TerminosEnvio = () => {
               omisiones de autoridades públicas (incluyendo los funcionarios
               aduaneros y de salud) con autoridad real o aparente.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="terminos-block final-block">
+          <motion.div
+            className="terminos-block final-block"
+            variants={blockVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <h2>Disposiciones Finales</h2>
             <p>
-              **Derecho a inspección:** Su embarque podrá, a opción nuestra o a
+              Derecho a inspección: Su embarque podrá, a opción nuestra o a
               pedido de las autoridades gubernamentales, ser abierto e
               inspeccionado por nosotros o por tales autoridades en cualquier
               momento.
             </p>
             <p>
-              **Sin garantías:** No otorgamos ningún tipo de garantía, expresa
-              ni implícita.
+              Sin garantías: No otorgamos ningún tipo de garantía, expresa ni
+              implícita.
             </p>
             <p className="legal-links">
               Sus datos personales serán tratados de conformidad con lo que
@@ -218,7 +277,7 @@ const TerminosEnvio = () => {
               </a>
               .
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

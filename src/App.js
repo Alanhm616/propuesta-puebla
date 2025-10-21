@@ -44,7 +44,7 @@ function App() {
         <Route path="/importaciones" element={<Importaciones />} />
         <Route path="/terminos" element={<TerminosEnvio />} />
 
-        {/* ✅ Páginas del footer */}
+        {/* Páginas del footer */}
         <Route path="/aviso-de-privacidad" element={<AvisoPrivacidad />} />
         <Route path="/articulos-prohibidos" element={<ArticulosProhibidos />} />
       </Routes>

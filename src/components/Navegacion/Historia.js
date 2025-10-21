@@ -1,32 +1,69 @@
 import React from "react";
 
+import { motion } from "framer-motion";
+
 import "./CSS/Historia.css";
+
+const blockVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
 
 const Historia = () => {
   return (
     <div className="history-page">
       <section className="history-hero">
         <div className="container">
-          <h1>NUESTRA HISTORIA</h1>
-          <p>
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            NUESTRA HISTORIA
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Desde 2003, conectamos a México y Estados Unidos con soluciones de
             envío rápidas y confiables.
-          </p>
+          </motion.p>
         </div>
       </section>
 
       <section className="history-content">
         <div className="container">
-          <div className="history-block">
+          <motion.div
+            className="history-block"
+            variants={blockVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <h2>Nacimiento y Visión (2003)</h2>
             <p>
               Nuestra empresa nace en Tulcingo de Valle, Puebla, en el año 2003
               bajo el nombre de **DIAMANTE EXPRESS** importando y exportando
               paquetería al sur de Los Angeles, California.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="history-block">
+          <motion.div
+            className="history-block"
+            variants={blockVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <h2>Expansión en América del Norte</h2>
             <p>
               En 2005 cambiamos nuestro nombre a **PUEBLA EXPRESS**, aludiendo
@@ -37,16 +74,23 @@ const Historia = () => {
               largo del Estado de California, Estado de Washington y en Las
               Vegas Nevada.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="history-block">
+          <motion.div
+            className="history-block"
+            variants={blockVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <h2>La Promesa de Puebla Express</h2>
             <p>
+              En México contamos con más de 200 Sucursales y Centros de Entrega.
               Diariamente nos esforzamos en mejorar para brindar a nuestros
               clientes lo mejor de nosotros.
             </p>
-            <p>**¡Gracias por ser parte de nuestra historia!**</p>
-          </div>
+            <p>¡Gracias por ser parte de nuestra historia!</p>
+          </motion.div>
         </div>
       </section>
     </div>

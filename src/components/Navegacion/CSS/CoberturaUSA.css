@@ -1,13 +1,23 @@
+:root {
+  --color-primary: #b71c1c;
+  --color-primary-opaco: #cd3d1f;
+  --color-green: #22c55e;
+  --color-black: #1e1e1c;
+  --color-background: #fafafaff;
+  --color-light-gray: #f2f2f2;
+  --color-text-light: #fefefe;
+}
+
 .cobertura-page {
   min-height: 70vh;
-  background-color: #fafafaff;
+  background-color: var(--color-background);
 }
 
 .cobertura-hero {
-  background: #c5c55e;
+  background: var(--color-primary);
   padding: 60px 0 40px;
   text-align: center;
-  color: #1e1e1c;
+  color: var(--color-background);
 }
 
 .cobertura-hero h2 {
@@ -20,10 +30,11 @@
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
+  color: var(--color-background);
 }
 
 .sucursales-detalladas {
-  background-color: #f5f5e6;
+  background-color: var(--color-light-gray);
   padding: 60px 0;
 }
 
@@ -35,7 +46,7 @@
 
 .sucursal-grid-wrapper {
   padding-bottom: 30px;
-  border-bottom: 1px dashed #c5c55e;
+  border-bottom: 1px dashed var(--color-primary-opaco);
 }
 .sucursal-grid-wrapper:last-child {
   border-bottom: none;
@@ -50,18 +61,18 @@
 }
 
 .sucursal-map-column {
-  background: #c5c55e;
+  background: var(--color-primary);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  color: #fff;
+  color: var(--color-background);
   font-weight: 700;
 }
 
 .city-name {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-background);
   margin-bottom: 5px;
 }
 
@@ -69,7 +80,7 @@
   display: block;
   font-size: 2rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--color-background);
   text-decoration: none;
   margin-bottom: 5px;
 }
@@ -84,65 +95,49 @@
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
+  position: relative;
 }
 
 .map-link-overlay {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 300px;
   background: #e0e0e0;
-  text-decoration: none;
-  color: #444;
-  border-radius: 10px;
-  font-weight: 700;
-  transition: all 0.3s;
-  text-align: center;
+  color: var(--color-black);
 }
 
 .map-link-overlay:hover {
   background: #d0d0d0;
-  color: #b71c1c;
-}
-
-.map-placeholder span {
-  display: block;
-  font-size: 1.1rem;
-  margin-top: 10px;
+  color: var(--color-primary);
 }
 
 .sucursal-info-column {
-  background: #c5c55e;
+  background: var(--color-background);
   padding: 30px;
   border-radius: 10px;
-  color: #fff;
+  color: var(--color-black);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .address-block p {
   font-size: 1.1rem;
-  color: #fff;
+  color: var(--color-black);
   margin-bottom: 30px;
 }
 
 .horario-block h3 {
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--color-primary);
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .horario-block p {
   font-size: 1rem;
-  color: #fff;
+  color: var(--color-black);
   line-height: 1.6;
 }
 
 .horario-block p.day-highlight {
   font-weight: 700;
-  color: #1e1e1c;
+  color: var(--color-primary);
 }
 
 .contact-actions {
@@ -160,42 +155,40 @@
   padding: 12px 0;
   font-size: 1.1rem;
   font-weight: 700;
-  text-decoration: none;
   border-radius: 4px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-call {
-  background: #fff;
-  color: #c5c55e;
-  border: none;
+  background: var(--color-background);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .btn-whatsapp {
-  background: #c5c55e;
-  color: #fff;
-  border: 2px solid #fff;
+  background: var(--color-green);
+  color: var(--color-background);
+  border: 2px solid var(--color-green);
 }
 
 .btn-call:hover {
   transform: translateY(-2px);
+  background: var(--color-black);
+  color: var(--color-background);
+  border-color: var(--color-black);
 }
 .btn-whatsapp:hover {
   transform: translateY(-2px);
-  background: #a9a94b;
-}
-
-.btn-call svg,
-.btn-whatsapp svg {
-  margin-right: 8px;
-  font-size: 1.1em;
+  background: var(--color-black);
+  color: var(--color-background);
+  border-color: var(--color-black);
 }
 
 .centros-envio-seccion {
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: #fafafaff;
+  background-color: var(--color-background);
 }
 
 .centros-envio-header {
@@ -204,21 +197,29 @@
   text-align: center;
 }
 .centros-envio-header p {
-  color: #fff;
+  color: var(--color-background);
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
 .centros-envio-header h2 {
-  color: #fff;
+  color: var(--color-background);
   font-size: 2.8rem;
   font-weight: 800;
 }
 
 .bg-california {
-  background: linear-gradient(to top, #6b8e23, #8fbc8f);
+  background: linear-gradient(
+    to top,
+    var(--color-primary),
+    var(--color-primary-opaco)
+  );
 }
 .bg-washington {
-  background: linear-gradient(to top, #708090, #a9a9a9);
+  background: linear-gradient(
+    to top,
+    var(--color-primary),
+    var(--color-primary-opaco)
+  );
 }
 
 .centros-grid {
@@ -228,62 +229,48 @@
 }
 
 .centro-card {
-  background: #c5c55e;
+  background: var(--color-light-gray);
   padding: 30px;
   border-radius: 10px;
   text-align: center;
-  color: #fff;
+  color: var(--color-black);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .centro-city {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 20px;
-}
-
-.centro-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.btn-centro-call,
-.btn-centro-whatsapp {
-  display: block;
-  padding: 10px 0;
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  color: var(--color-primary);
 }
 
 .btn-centro-call {
-  background: #fff;
-  color: #c5c55e;
+  background: var(--color-background);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 
 .btn-centro-whatsapp {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+  background: var(--color-primary);
+  color: var(--color-background);
+  border: 1px solid var(--color-primary);
 }
-.btn-centro-call:hover,
+
+.btn-centro-call:hover {
+  transform: scale(1.05);
+  background: var(--color-black);
+  color: var(--color-background);
+}
 .btn-centro-whatsapp:hover {
   transform: scale(1.05);
+  background: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-background);
 }
 
 @media (max-width: 900px) {
   .sucursal-grid {
     grid-template-columns: 1fr;
-  }
-  .sucursal-map-column,
-  .sucursal-info-column {
-    padding: 20px;
-  }
-  .contact-actions {
-    flex-direction: row;
   }
 }
 @media (max-width: 600px) {
@@ -291,17 +278,8 @@
   .sucursal-info-column {
     padding: 15px;
   }
-  .city-name {
-    font-size: 2rem;
-  }
-  .sucursal-phone {
-    font-size: 1.5rem;
-  }
-  .btn-call,
-  .btn-whatsapp {
-    padding: 12px 15px;
-    font-size: 1rem;
-    flex: 1;
+  .contact-actions {
+    flex-direction: row;
   }
   .centros-grid {
     grid-template-columns: 1fr;

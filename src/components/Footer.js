@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileAlt, faBan } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom"; // 👈 Importante
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -33,4 +33,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

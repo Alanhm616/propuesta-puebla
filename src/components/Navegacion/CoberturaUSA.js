@@ -1,7 +1,20 @@
 import React from "react";
 import "./CSS/CoberturaUSA.css";
 
+import { motion } from "framer-motion";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
+
+const blockVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 const EMBED_URLS = {
   "LOS ANGELES, CA.":
@@ -16,7 +29,7 @@ const EMBED_URLS = {
 
 const getContactLinks = (phone) => {
   const message = encodeURIComponent(
-    "Hola, me gustaría preguntar sobre sus servicios de envío a EE. UU."
+    "Hola, me gustaría preguntar sobre sus servicios de envío."
   );
   const cleanPhone = phone.replace(/\s/g, "").replace("+", "");
 
@@ -109,12 +122,17 @@ const SucursalDetalle = ({ sucursal }) => {
   const hasMultiplePhones = sucursal.multiPhone && sucursal.phone2;
   const phone2Links = hasMultiplePhones ? getContactLinks(sucursal.phone2) : {};
 
-  // Función para manejar saltos de línea en la dirección
   const formatAddress = (address) =>
     address.split("\n").map((line, i) => <p key={i}>{line}</p>);
 
   return (
-    <div className="sucursal-grid-wrapper">
+    <motion.div
+      className="sucursal-grid-wrapper"
+      variants={blockVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
       <div className="sucursal-grid">
         <div className="sucursal-map-column">
           <h2 className="city-name">{sucursal.city}</h2>
@@ -178,7 +196,7 @@ const SucursalDetalle = ({ sucursal }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -186,7 +204,13 @@ const CentroEnvio = ({ data }) => {
   const { telLink, whatsappLink } = getContactLinks(data.phone);
 
   return (
-    <div className="centro-card">
+    <motion.div
+      className="centro-card"
+      variants={blockVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
       <h3 className="centro-city">{data.city}</h3>
       <div className="centro-actions">
         <a href={telLink} className="btn-centro-call">
@@ -201,7 +225,7 @@ const CentroEnvio = ({ data }) => {
           Whatsapp
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -210,8 +234,18 @@ const CoberturaUSA = () => {
     <div className="cobertura-page">
       <section className="cobertura-hero">
         <div className="container">
-          <h2>COBERTURA USA</h2>
-          <h1>SUCURSALES Puebla-Express</h1>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.8 } }}
+          >
+            COBERTURA USA
+          </motion.h2>
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.8, delay: 0.2 } }}
+          >
+            SUCURSALES Puebla-Express
+          </motion.h1>
         </div>
       </section>
 
