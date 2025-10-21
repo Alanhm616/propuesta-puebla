@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+.importaciones-container {
+  min-height: 100vh;
+  background-color: #fafafaff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===============================
+   Título principal
+   =============================== */
+.importaciones-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #b71c1c; /* color primario */
+  margin-bottom: 4rem;
+  line-height: 1.2;
+}
+
+.importaciones-highlight {
+  display: block;
+  font-size: 3.5rem;
+  color: #cd3d1f;
+}
+
+.importaciones-subtitle {
+  display: block;
+  font-size: 1.6rem;
+  color: #5656ff;
+  margin-top: 0.5rem;
+}
+
+/* ===============================
+   Carrusel
+   =============================== */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1500px;
+  position: relative;
+  height: 450px;
+}
+
+/* ===============================
+   Tarjetas tipo Coverflow
+   =============================== */
+.card {
+  position: absolute;
+  top: 0;
+  width: 80%;
+  max-width: 500px;
+  height: 100%;
+  background-color: #ffffffcc;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-current {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1) rotateY(0deg);
+  z-index: 3;
+}
+
+.card-prev {
+  opacity: 0.7;
+  transform: translateX(-120%) scale(0.8) rotateY(30deg);
+  z-index: 2;
+}
+
+.card-next {
+  opacity: 0.7;
+  transform: translateX(120%) scale(0.8) rotateY(-30deg);
+  z-index: 2;
+}
+
+.card-hidden {
+  opacity: 0;
+  transform: translateX(0) scale(0.5) rotateY(0deg);
+  z-index: 1;
+}
+
+/* ===============================
+   Texto dentro de tarjeta
+   =============================== */
+.card-text {
+  text-align: center;
+}
+
+.card-text h2 {
+  font-size: 1.8rem;
+  color: #b71c1c;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-text h3 {
+  font-size: 1.4rem;
+  color: #5656ff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-text p {
+  font-size: 1rem;
+  color: #1e1e1c;
+  margin-bottom: 1.5rem;
+}
+
+/* ===============================
+   Botón
+   =============================== */
+.card-button {
+  background-color: #b71c1c;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #cd3d1f;
+}
+
+/* ===============================
+   Imagen de la tarjeta
+   =============================== */
+.card-image {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   Flechas
+   =============================== */
+.arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #b71c1c;
+  color: #fff;
+  border: none;
+  padding: 1rem 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: 0.3s;
+  z-index: 5;
+}
+
+.arrow-button:hover {
+  background-color: #cd3d1f;
+}
+
+.arrow-left {
+  left: -2rem;
+}
+
+.arrow-right {
+  right: -2rem;
+}
+
+/* ===============================
+   Indicadores
+   =============================== */
+.indicators {
+  display: flex;
+  gap: 10px;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #bebefdff;
+  transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+  background-color: #b71c1c;
+  transform: scale(1.2);
+}
