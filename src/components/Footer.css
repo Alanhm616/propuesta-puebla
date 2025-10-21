@@ -1,6 +1,6 @@
 .site-footer {
-  background-color: #22c55e; /* green de la paleta */
-  color: #fafafa; /* texto principal */
+  background-color: #22c55e; /* green */
+  color: #fafafaff; /* texto principal */
   padding: 2.5rem 0;
   font-family: 'Roboto', sans-serif;
   text-align: center;
@@ -24,24 +24,47 @@
 .footer-brand p {
   margin-top: 0.5rem;
   font-size: 0.9rem;
-  color: #fafafa;
+  color: #fafafaff; /* background claro */
+}
+
+/* Links del footer estilo “botón” */
+.footer-links {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
-  display: inline-block;
-  margin: 0.3rem 1rem;
-  color: #fafafa; /* texto principal */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fafafaff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .footer-links a:hover {
-  color: #eab308; /* yellow de la paleta */
+  background-color: #eab308; /* amarillo de tu paleta */
+  color: #1e1e1c; /* negro para contraste */
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Íconos dentro de los links si los tuvieses */
+.footer-links .footer-icon {
+  font-size: 1rem;
+  margin-right: 0.4rem;
+}
+
+/* Socials */
 .footer-socials a {
   margin: 0 0.5rem;
-  color: #fafafa;
+  color: #fafafaff;
   font-size: 1.2rem;
   transition: transform 0.3s ease, color 0.3s ease;
 }
