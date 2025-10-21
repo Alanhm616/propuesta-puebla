@@ -1,0 +1,309 @@
+.cobertura-page {
+  min-height: 70vh;
+  background-color: #fafafaff;
+}
+
+.cobertura-hero {
+  background: #c5c55e;
+  padding: 60px 0 40px;
+  text-align: center;
+  color: #1e1e1c;
+}
+
+.cobertura-hero h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.cobertura-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.sucursales-detalladas {
+  background-color: #f5f5e6;
+  padding: 60px 0;
+}
+
+.sucursales-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.sucursal-grid-wrapper {
+  padding-bottom: 30px;
+  border-bottom: 1px dashed #c5c55e;
+}
+.sucursal-grid-wrapper:last-child {
+  border-bottom: none;
+}
+
+.sucursal-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: start;
+  max-width: 1200px;
+}
+
+.sucursal-map-column {
+  background: #c5c55e;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-weight: 700;
+}
+
+.city-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.sucursal-phone {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+.sucursal-phone.extra {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.map-link-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  background: #e0e0e0;
+  text-decoration: none;
+  color: #444;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.map-link-overlay:hover {
+  background: #d0d0d0;
+  color: #b71c1c;
+}
+
+.map-placeholder span {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.sucursal-info-column {
+  background: #c5c55e;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.address-block p {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.horario-block h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.horario-block p {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.horario-block p.day-highlight {
+  font-weight: 700;
+  color: #1e1e1c;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.btn-call,
+.btn-whatsapp {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-call {
+  background: #fff;
+  color: #c5c55e;
+  border: none;
+}
+
+.btn-whatsapp {
+  background: #c5c55e;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-call:hover {
+  transform: translateY(-2px);
+}
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  background: #a9a94b;
+}
+
+.btn-call svg,
+.btn-whatsapp svg {
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+
+.centros-envio-seccion {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #fafafaff;
+}
+
+.centros-envio-header {
+  padding: 30px 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.centros-envio-header p {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.centros-envio-header h2 {
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+
+.bg-california {
+  background: linear-gradient(to top, #6b8e23, #8fbc8f);
+}
+.bg-washington {
+  background: linear-gradient(to top, #708090, #a9a9a9);
+}
+
+.centros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.centro-card {
+  background: #c5c55e;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.centro-city {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.centro-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-centro-call,
+.btn-centro-whatsapp {
+  display: block;
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-centro-call {
+  background: #fff;
+  color: #c5c55e;
+}
+
+.btn-centro-whatsapp {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-centro-call:hover,
+.btn-centro-whatsapp:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .sucursal-grid {
+    grid-template-columns: 1fr;
+  }
+  .sucursal-map-column,
+  .sucursal-info-column {
+    padding: 20px;
+  }
+  .contact-actions {
+    flex-direction: row;
+  }
+}
+@media (max-width: 600px) {
+  .sucursal-map-column,
+  .sucursal-info-column {
+    padding: 15px;
+  }
+  .city-name {
+    font-size: 2rem;
+  }
+  .sucursal-phone {
+    font-size: 1.5rem;
+  }
+  .btn-call,
+  .btn-whatsapp {
+    padding: 12px 15px;
+    font-size: 1rem;
+    flex: 1;
+  }
+  .centros-grid {
+    grid-template-columns: 1fr;
+  }
+}
