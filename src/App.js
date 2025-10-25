@@ -20,8 +20,8 @@ import ArticulosProhibidos from "./components/piepagina/ArticulosProhibidos";
 
 const HomePage = () => (
   <main>
-    <Welcome />
     <Hero />
+    <Welcome />
     <Services />
     <About />
     <Form />

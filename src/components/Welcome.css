@@ -7,17 +7,25 @@
   padding: 60px 20px;
   text-align: center;
   color: white;
-  background: url('../assets/welcome-bg.png') no-repeat center center;
+  background: url("../assets/welcome-bg.png") no-repeat center center;
   background-size: cover;
   overflow: hidden;
+  padding-bottom: 80px;
 }
 
 /* Overlay degradado */
 .welcome::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.8)
+  );
   z-index: 1;
 }
 
@@ -28,14 +36,23 @@
 }
 
 /* Animaciones de aparición */
-.welcome h2, .welcome p {
+.welcome h2,
+.welcome p {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeUp 1s forwards;
 }
 
-.welcome h2 { animation-delay: 0.3s; font-size: 3rem; margin-bottom: 20px; }
-.welcome p { animation-delay: 0.6s; font-size: 1.3rem; line-height: 1.6; }
+.welcome h2 {
+  animation-delay: 0.3s;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.welcome p {
+  animation-delay: 0.6s;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
 
 /* Iconos animados */
 .welcome-icons {
@@ -73,29 +90,42 @@
 
 .welcome-btn:hover {
   transform: scale(1.05);
-  background-color: #007f34; /* Verde más oscuro al hacer hover */
+  background-color: #007f34;
 }
 
 /* Partículas dinámicas */
 .welcome::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -50px;
   left: -50px;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 1px,
+    transparent 1px
+  );
   background-size: 50px 50px;
   animation: moveParticles 15s linear infinite;
   z-index: 0;
 }
 
 @keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes moveParticles {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(-25px, 25px); }
-  100% { transform: translate(0,0); }
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-25px, 25px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

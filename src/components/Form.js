@@ -4,10 +4,16 @@ import { motion } from "framer-motion";
 import { FaUser, FaEnvelope, FaPhone, FaComment } from "react-icons/fa";
 
 const Form = () => {
-  const [form, setForm] = useState({ nombre: "", email: "", telefono: "", mensaje: "" });
+  const [form, setForm] = useState({
+    nombre: "",
+    email: "",
+    telefono: "",
+    mensaje: "",
+  });
   const [sent, setSent] = useState(false);
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +32,11 @@ const Form = () => {
           transition={{ duration: 0.6 }}
         >
           <h2>PONTE EN CONTACTO</h2>
-          <form onSubmit={handleSubmit} className="lead-form" autoComplete="off">
+          <form
+            onSubmit={handleSubmit}
+            className="lead-form"
+            autoComplete="off"
+          >
             <div className="row">
               <div className="input-group">
                 <FaUser className="input-icon" />
@@ -74,8 +84,19 @@ const Form = () => {
               </div>
             </div>
             <div className="actions">
-              <button type="submit" className="btn-primary">Enviar solicitud</button>
-              {sent && <motion.div className="sent-badge" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.3 }}>¡Enviado!</motion.div>}
+              <button type="submit" className="btn-primary">
+                Enviar solicitud
+              </button>
+              {sent && (
+                <motion.div
+                  className="sent-badge"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  ¡Enviado!
+                </motion.div>
+              )}
             </div>
           </form>
         </motion.div>

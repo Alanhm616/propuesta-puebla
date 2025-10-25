@@ -1,82 +1,120 @@
+/*
+  ==============================================
+  Footer.css (Minimalista Rojo) - CORREGIDO
+  ==============================================
+*/
+
+/* Variables CSS */
+:root {
+  --color-primary: #b71c1c; /* Rojo Oscuro */
+  --color-primary-opaco: #cd3d1f;
+  --color-green: #22c55e; /* Verde (Acento Secundario) */
+  --color-black: #1e1e1c; /* Negro */
+  --color-background: #fafafaff; /* Blanco Principal */
+}
+
+/* El FOOTER REAL */
 .site-footer {
-  background-color: #22c55e; /* green */
-  color: #fafafaff; /* texto principal */
-  padding: 2.5rem 0;
-  font-family: 'Roboto', sans-serif;
+  /* Fondo principal en Rojo Oscuro */
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: 3rem 0;
+  font-family: "Roboto", sans-serif;
   text-align: center;
 }
 
 .footer-inner {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  align-items: center;
-}
-
-.footer-brand h3 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #b71c1c; /* primary */
-}
-
-.footer-brand p {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #fafafaff; /* background claro */
-}
-
-/* Links del footer estilo “botón” */
-.footer-links {
-  grid-column: 1/-1;
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.footer-links a {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fafafaff;
+/* Marca y Logo */
+.footer-brand {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer-logo-link {
+  display: block;
+  padding: 5px;
+  background: var(--color-background); /* Fondo Blanco para el logo */
+  border-radius: 4px;
+}
+
+.footer-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.footer-tagline {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Links del footer (Aviso de privacidad y Prohibidos) */
+.footer-links-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: flex-end;
+}
+
+.footer-link-button {
+  background-color: transparent;
+  color: var(--color-background);
   text-decoration: none;
   font-weight: 500;
   padding: 0.6rem 1rem;
-  border-radius: 8px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   transition: all 0.3s ease;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
-.footer-links a:hover {
-  background-color: #eab308; /* amarillo de tu paleta */
-  color: #1e1e1c; /* negro para contraste */
-  transform: translateY(-2px) scale(1.05);
+.footer-link-button:hover {
+  background-color: var(--color-black); /* Relleno Negro */
+  color: var(--color-background);
+  border-color: var(--color-black);
+  transform: translateY(-2px) scale(1.02);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Íconos dentro de los links si los tuvieses */
-.footer-links .footer-icon {
+/* Íconos dentro de los links */
+.footer-link-button .footer-icon {
   font-size: 1rem;
-  margin-right: 0.4rem;
+  margin-right: 0.6rem;
 }
 
-/* Socials */
-.footer-socials a {
-  margin: 0 0.5rem;
-  color: #fafafaff;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.footer-socials a:hover {
-  color: #eab308;
-  transform: scale(1.2);
-}
-
+/* Texto de Copyright */
 .footer-copy {
-  grid-column: 1/-1;
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: #cd3d1f; /* primaryOpaco */
+  flex-basis: 100%;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-brand {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links-group {
+    align-items: center;
+  }
 }

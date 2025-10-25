@@ -1,83 +1,93 @@
-.services {
-  padding: 100px 20px;
-  background-color: #f3f7f5;
+#services {
+  padding: 100px 0;
+  background-color: var(--color-light-gray);
   text-align: center;
 }
 
-.services h2 {
+#services h2 {
   font-size: 3rem;
-  color: #00a34a; /* Verde Puebla Express */
+  color: var(--color-black);
   margin-bottom: 60px;
   position: relative;
   display: inline-block;
 }
 
-.services h2::after {
+#services h2::after {
   content: "";
   display: block;
   width: 60%;
   height: 4px;
-  background-color: #00a34a;
+  background-color: var(--color-primary);
   margin: 10px auto 0;
   border-radius: 2px;
   transition: width 0.3s ease;
 }
 
-.services h2:hover::after {
-  width: 100%;
+/* Contenedor de la cuadrícula */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; /* Espacio entre las tarjetas */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
+/* Estilo para cada item de la lista (Ahora una tarjeta de cuadrícula) */
+.list-item {
+  display: block;
+  text-align: center;
 
-.card {
-  background: linear-gradient(135deg, #e6f4ee, #ffffff);
-  padding: 40px 25px;
-  border-radius: 25px;
-  width: 300px;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  background: var(--color-background);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(0,163,74,0.05);
-  transform: rotate(45deg);
-  transition: all 0.5s ease;
+.list-item:hover {
+  box-shadow: 0 8px 25px rgba(183, 28, 28, 0.15);
+  transform: translateY(-5px);
 }
 
-.card:hover::before {
-  transform: rotate(0deg);
-  background: rgba(0,163,74,0.08);
+/* Contenedor del ícono */
+.list-icon-wrap {
+  background: rgba(183, 28, 28, 0.1);
+  padding: 15px;
+  border-radius: 50%;
+
+  width: fit-content;
+  margin: 0 auto 20px;
 }
 
-.card .icon {
-  font-size: 3.5rem;
-  color: #00a34a;
-  margin-bottom: 25px;
+.list-icon {
+  font-size: 2rem;
+  color: var(--color-primary);
 }
 
-.card h3 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  color: #004d2e;
-  font-weight: 600;
+/* Texto del ítem */
+.list-body h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: var(--color-black);
+  font-weight: 700;
 }
 
-.card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
+.list-body p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text-detail);
+}
+
+@media (max-width: 1000px) {
+  .service-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .service-list {
+    grid-template-columns: 1fr;
+  }
 }

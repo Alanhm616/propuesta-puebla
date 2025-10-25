@@ -1,6 +1,6 @@
 import React from "react";
 import "./Welcome.css";
-import { FaTruck, FaMapMarkedAlt, FaClock } from "react-icons/fa"; // iconos
+import { FaTruck, FaMapMarkedAlt, FaClock } from "react-icons/fa";
 
 const Welcome = () => {
   return (
@@ -8,9 +8,10 @@ const Welcome = () => {
       <div className="welcome-content">
         <h2>¡Bienvenidos!</h2>
         <p>
-          En nuestro equipo, nos enorgullece ofrecer lo mejor de nosotros a nuestros
-          clientes desde el año 2003. Nos aseguramos de personalizar nuestras ofertas
-          para satisfacer sus necesidades específicas. ¡Gracias por confiar en nosotros!
+          En nuestro equipo, nos enorgullece ofrecer lo mejor de nosotros a
+          nuestros clientes desde el año 2003. Nos aseguramos de personalizar
+          nuestras ofertas para satisfacer sus necesidades específicas. ¡Gracias
+          por confiar en nosotros!
         </p>
 
         <div className="welcome-icons">
@@ -28,11 +29,12 @@ const Welcome = () => {
           </div>
         </div>
 
-        <a href="#formulario" className="btn-primary welcome-btn">Solicitar Servicio</a>
+        <a href="#formulario" className="btn-primary welcome-btn">
+          Solicitar Servicio
+        </a>
       </div>
     </section>
   );
 };
 
 export default Welcome;
-
