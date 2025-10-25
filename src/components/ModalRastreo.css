@@ -1,14 +1,18 @@
-/* ModalRastreo.css */
+:root {
+  --color-primary: #b71c1c;
+  --color-primary-opaco: #cd3d1f;
+  --color-green: #22c55e;
+  --color-background: #fafafaff;
+}
 
-/* Fondo semi-transparente con desenfoque */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
   z-index: 1500;
   display: flex;
   justify-content: center;
@@ -16,29 +20,28 @@
   animation: fadeIn 0.3s ease;
 }
 
-/* Contenedor del modal */
 .modal-content {
   width: 95%;
   max-width: 1200px;
   height: 90vh;
-  background: #fafafaff; /* color de fondo */
+  background: var(--color-background);
   border-radius: 16px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   animation: scaleIn 0.3s ease;
   display: flex;
   flex-direction: column;
-  border: 2px solid #22c55e; /* borde verde para resaltar */
+
+  border: 2px solid var(--color-primary);
 }
 
-/* Botón de cerrar */
 .modal-close {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: #b71c1c; /* primary */
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-background);
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -50,11 +53,12 @@
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
 }
 
 .modal-close:hover {
-  background: #cd3d1f; /* primary opaco */
+  background: var(--color-primary-opaco);
   transform: scale(1.15) rotate(90deg);
 }
 
@@ -65,18 +69,28 @@
   width: 100%;
   height: 100%;
   animation: fadeIn 0.5s ease;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 14px 14px;
 }
 
 /* Animaciones */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Responsive: en móviles ocupa toda la pantalla */
