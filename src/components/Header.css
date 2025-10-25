@@ -61,7 +61,7 @@
   gap: 20px;
 }
 
-/* 1. Navegación Desktop */
+/* Navegación Desktop */
 .nav {
   display: flex;
   align-items: center;
@@ -77,6 +77,7 @@
   position: relative;
   transition: color 0.3s;
   white-space: nowrap;
+  text-transform: capitalize; /* Title Case */
 }
 .nav a::after {
   content: "";
@@ -96,44 +97,27 @@
   width: 100%;
 }
 
-.header-actions-links {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-left: 10px;
-}
-
-.header-actions-links a {
-  text-decoration: none;
-  color: var(--color-black);
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: color 0.3s;
-}
-.header-actions-links a:hover {
-  color: var(--color-primary);
-}
-
-/* 3. Botón de Rastreo (CTA) */
-.btn-ghost {
-  background: none;
-  border: 2px solid var(--color-green);
-  color: var(--color-green);
+/* Botón Rastreo (CTA) */
+.btn-rastreo {
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  color: #fff;
   padding: 8px 18px;
   border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
   font-size: 0.95rem;
 }
 
-.btn-ghost:hover {
-  background-color: var(--color-green);
-  color: var(--color-background);
-  box-shadow: 0 6px 15px rgba(34, 197, 94, 0.2);
+.btn-rastreo:hover {
+  background: linear-gradient(135deg, #b71c1c, #cd3d1f);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(183, 28, 28, 0.4);
+  transform: translateY(-2px) scale(1.02);
 }
 
-/* Hamburger (mobile) */
+/* Mobile menu */
 .hamburger {
   display: none;
   position: relative;
@@ -141,7 +125,66 @@
 #menu-toggle {
   display: none;
 }
-/* Responsive rules */
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+  display: block;
+  background: var(--color-black);
+  height: 3px;
+  width: 25px;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.menu-btn span::before,
+.menu-btn span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.menu-btn span::before {
+  top: -8px;
+}
+.menu-btn span::after {
+  top: 8px;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+#menu-toggle:checked + .menu-btn + .mobile-menu {
+  display: flex;
+}
+
+/* Mobile Links */
+.mobile-menu a {
+  text-decoration: none;
+  color: var(--color-black);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.mobile-cta {
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+.mobile-cta:hover {
+  background: linear-gradient(135deg, #b71c1c, #cd3d1f);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(183, 28, 28, 0.4);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Responsive */
 @media (max-width: 1100px) {
   .header-nav-actions {
     display: none;

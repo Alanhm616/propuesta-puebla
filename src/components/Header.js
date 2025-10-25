@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 import logo from "../assets/logo.png";
@@ -13,23 +12,15 @@ const Header = () => {
   const handleCloseModal = () => setModalOpen(false);
 
   const handleNavLinkClick = (e, targetId) => {
-    if (location.pathname !== "/") {
-      return;
-    }
-
+    if (location.pathname !== "/") return;
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: element.offsetTop - 80, behavior: "smooth" });
     }
   };
 
-  const handleLogoClick = () => {
-    window.scrollTo(0, 0);
-  };
+  const handleLogoClick = () => window.scrollTo(0, 0);
 
   return (
     <>
@@ -63,25 +54,12 @@ const Header = () => {
               <Link to="/" onClick={(e) => handleNavLinkClick(e, "hero")}>
                 Inicio
               </Link>
-
-              <Link to="/cobertura-usa">COBERTURA en USA</Link>
-              <Link to="/importaciones">ONLINE Importaciones</Link>
-              <Link to="/terminos">Términos y Condiciones de Envío</Link>
-              <Link to="/historia">HISTORIA</Link>
+              <Link to="/cobertura-usa">Cobertura En USA</Link>
+              <Link to="/importaciones">Online Importaciones</Link>
+              <Link to="/historia">Historia</Link>
             </nav>
 
-            <div className="header-actions-links">
-              <a
-                href="https://wa.me/523311234567"
-                target="_blank"
-                rel="noreferrer"
-              >
-                WhatsApp
-              </a>
-              <a href="#contacto">Contacto</a>
-            </div>
-
-            <button className="btn-ghost" onClick={handleOpenModal}>
+            <button className="btn-rastreo" onClick={handleOpenModal}>
               Rastreo
             </button>
           </div>
@@ -95,10 +73,9 @@ const Header = () => {
               <Link to="/" onClick={(e) => handleNavLinkClick(e, "hero")}>
                 Inicio
               </Link>
-              <Link to="/cobertura-usa">COBERTURA en USA</Link>
-              <Link to="/importaciones">ONLINE Importaciones</Link>
-              <Link to="/terminos">Términos y Condiciones de Envío</Link>
-              <Link to="/historia">HISTORIA</Link>
+              <Link to="/cobertura-usa">Cobertura En USA</Link>
+              <Link to="/importaciones">Online Importaciones</Link>
+              <Link to="/historia">Historia</Link>
 
               <button className="mobile-cta" onClick={handleOpenModal}>
                 Rastreo
