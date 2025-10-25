@@ -15,7 +15,6 @@ import CoberturaUSA from "./components/Navegacion/CoberturaUSA";
 import Importaciones from "./components/Navegacion/Importaciones";
 import TerminosEnvio from "./components/Navegacion/TerminosEnvio";
 
-// ✅ Nuevos imports para las páginas del footer
 import AvisoPrivacidad from "./components/piepagina/AvisoPrivacidad";
 import ArticulosProhibidos from "./components/piepagina/ArticulosProhibidos";
 

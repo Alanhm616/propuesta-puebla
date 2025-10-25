@@ -2,6 +2,8 @@ import React from "react";
 import "./CSS/TerminosEnvio.css";
 import { motion } from "framer-motion";
 
+import { Link } from "react-router-dom";
+
 const blockVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -257,24 +259,24 @@ const TerminosEnvio = () => {
             <p className="legal-links">
               Sus datos personales serán tratados de conformidad con lo que
               establece el aviso de privacidad publicado en{" "}
-              <a
-                href="https://www.puebla.express/copia-de-artículos-prohibidos"
+              <Link
+                to="/aviso-de-privacidad"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
-                https://www.puebla.express/copia-de-artículos-prohibidos
-              </a>
+                Aviso de Privacidad
+              </Link>
               .
             </p>
             <p className="legal-links">
               Consulte la lista de artículos prohibidos en{" "}
-              <a
-                href="https://www.puebla.express/artículos-prohibidos"
+              <Link
+                to="/articulos-prohibidos"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
-                https://www.puebla.express/artículos-prohibidos
-              </a>
+                Artículos Prohibidos
+              </Link>
               .
             </p>
           </motion.div>
