@@ -1,6 +1,5 @@
 import React from "react";
 import "./CSS/CoberturaUSA.css";
-
 import { motion } from "framer-motion";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 
@@ -27,6 +26,7 @@ const EMBED_URLS = {
     "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d829.4863719622415!2d-117.8677381!3d33.7362257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd91a42a8cf15%3A0xcd25f12a1ffef19a!2sPuebla%20Express!5e0!3m2!1ses-419!2smx!4v1761011928082!5m2!1ses-419!2smx",
 };
 
+// Función para generar los links de contacto (con mensaje pre-llenado)
 const getContactLinks = (phone) => {
   const message = encodeURIComponent(
     "Hola, me gustaría preguntar sobre sus servicios de envío."
@@ -53,7 +53,6 @@ const sucursalesData = {
         "Domingo: 10 am a 4 pm",
         "Lunes y Martes: Cerrado",
       ],
-
       mapEmbedUrl: EMBED_URLS["LOS ANGELES, CA."],
       multiPhone: false,
     },
@@ -165,7 +164,6 @@ const SucursalDetalle = ({ sucursal }) => {
           {/* Dirección */}
           <div className="address-block">{formatAddress(sucursal.address)}</div>
 
-          {/* Horarios */}
           <div className="horario-block">
             {sucursal.horario.map((line, hIndex) => (
               <p
@@ -213,17 +211,19 @@ const CentroEnvio = ({ data }) => {
     >
       <h3 className="centro-city">{data.city}</h3>
       <div className="centro-actions">
-        <a href={telLink} className="btn-centro-call">
-          Llamar
-        </a>
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noreferrer"
-          className="btn-centro-whatsapp"
-        >
-          Whatsapp
-        </a>
+        <div className="centro-buttons">
+          <a href={telLink} className="btn-centro-call">
+            Llamar
+          </a>
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-centro-whatsapp"
+          >
+            Whatsapp
+          </a>
+        </div>
       </div>
     </motion.div>
   );

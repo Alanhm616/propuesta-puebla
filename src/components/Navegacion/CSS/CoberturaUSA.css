@@ -38,6 +38,7 @@
   padding: 60px 0;
 }
 
+/* Lista de sucursales */
 .sucursales-list {
   display: flex;
   flex-direction: column;
@@ -60,6 +61,7 @@
   max-width: 1200px;
 }
 
+/* Columna Izquierda: Mapa y Teléfonos */
 .sucursal-map-column {
   background: var(--color-primary);
   padding: 30px;
@@ -89,6 +91,7 @@
   margin-bottom: 20px;
 }
 
+/* Contenedor del Mapa */
 .map-container {
   width: 100%;
   border-radius: 10px;
@@ -98,16 +101,13 @@
   position: relative;
 }
 
-.map-link-overlay {
-  background: #e0e0e0;
-  color: var(--color-black);
+.map-iframe-embed {
+  width: 100%;
+  height: 300px;
+  display: block;
 }
 
-.map-link-overlay:hover {
-  background: #d0d0d0;
-  color: var(--color-primary);
-}
-
+/* Columna Derecha: Información, Horarios y Botones */
 .sucursal-info-column {
   background: var(--color-background);
   padding: 30px;
@@ -244,6 +244,33 @@
   color: var(--color-primary);
 }
 
+.centro-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.centro-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-centro-call,
+.btn-centro-whatsapp {
+  display: block;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
 .btn-centro-call {
   background: var(--color-background);
   color: var(--color-primary);
@@ -268,6 +295,7 @@
   color: var(--color-background);
 }
 
+/* Reglas Responsive */
 @media (max-width: 900px) {
   .sucursal-grid {
     grid-template-columns: 1fr;

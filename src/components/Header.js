@@ -37,19 +37,9 @@ const Header = () => {
         <div className="container topbar-inner">
           <div className="top-left">
             <span>
-              Atención al cliente:{" "}
+              Atención al cliente:
               <a href="tel:+523311234567">+52 331 123 4567</a>
             </span>
-          </div>
-          <div className="top-right">
-            <a
-              href="https://wa.me/523311234567"
-              target="_blank"
-              rel="noreferrer"
-            >
-              WhatsApp
-            </a>
-            <a href="#contacto">Contacto</a>
           </div>
         </div>
       </div>
@@ -68,24 +58,34 @@ const Header = () => {
             )}
           </div>
 
-          {/* Navegación Desktop */}
-          <nav className="nav">
-            <Link to="/" onClick={(e) => handleNavLinkClick(e, "hero")}>
-              Inicio
-            </Link>
+          <div className="header-nav-actions">
+            <nav className="nav">
+              <Link to="/" onClick={(e) => handleNavLinkClick(e, "hero")}>
+                Inicio
+              </Link>
 
-            <Link to="/cobertura-usa">COBERTURA en USA</Link>
-            <Link to="/importaciones">ONLINE Importaciones</Link>
-            <Link to="/terminos">Términos y Condiciones de Envío</Link>
-            <Link to="/historia">HISTORIA</Link>
+              <Link to="/cobertura-usa">COBERTURA en USA</Link>
+              <Link to="/importaciones">ONLINE Importaciones</Link>
+              <Link to="/terminos">Términos y Condiciones de Envío</Link>
+              <Link to="/historia">HISTORIA</Link>
+            </nav>
 
-            {/* Botón de Rastreo con Modal */}
+            <div className="header-actions-links">
+              <a
+                href="https://wa.me/523311234567"
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp
+              </a>
+              <a href="#contacto">Contacto</a>
+            </div>
+
             <button className="btn-ghost" onClick={handleOpenModal}>
               Rastreo
             </button>
-          </nav>
+          </div>
 
-          {/* Menú móvil */}
           <div className="hamburger" aria-hidden>
             <input id="menu-toggle" type="checkbox" />
             <label htmlFor="menu-toggle" className="menu-btn">
@@ -95,25 +95,11 @@ const Header = () => {
               <Link to="/" onClick={(e) => handleNavLinkClick(e, "hero")}>
                 Inicio
               </Link>
-              <Link to="/" onClick={(e) => handleNavLinkClick(e, "welcome")}>
-                Bienvenidos
-              </Link>
-              <Link to="/" onClick={(e) => handleNavLinkClick(e, "services")}>
-                Servicios
-              </Link>
-              <Link to="/" onClick={(e) => handleNavLinkClick(e, "about")}>
-                Acerca
-              </Link>
-              <Link to="/" onClick={(e) => handleNavLinkClick(e, "insurance")}>
-                Seguro
-              </Link>
-
               <Link to="/cobertura-usa">COBERTURA en USA</Link>
               <Link to="/importaciones">ONLINE Importaciones</Link>
               <Link to="/terminos">Términos y Condiciones de Envío</Link>
               <Link to="/historia">HISTORIA</Link>
 
-              {/* Botón móvil Rastreo */}
               <button className="mobile-cta" onClick={handleOpenModal}>
                 Rastreo
               </button>
@@ -122,7 +108,6 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Modal de Rastreo */}
       <ModalRastreo open={modalOpen} onClose={handleCloseModal} />
     </>
   );
