@@ -1,210 +1,209 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
-
-.importaciones-container {
-  min-height: 100vh;
-  background-color: #fafafaff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 1rem;
-  font-family: "Poppins", sans-serif;
+:root {
+  --color-primary: #b71c1c;
+  --color-primary-opaco: #cd3d1f;
+  --color-green: #22c55e;
+  --color-black: #1e1e1c;
+  --color-background: #fafafaff;
+  --color-light-gray: #f2f2f2;
 }
 
-/* ===============================
-   Título principal
-   =============================== */
-.importaciones-title {
+.importaciones-container {
+  padding: 80px 20px;
+  background-color: var(--color-light-gray);
   text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.importaciones-title {
   font-size: 3rem;
+  color: var(--color-black);
   font-weight: 800;
-  color: #b71c1c; /* color primario */
-  margin-bottom: 4rem;
-  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
 .importaciones-highlight {
-  display: block;
-  font-size: 3.5rem;
-  color: #cd3d1f;
+  color: var(--color-primary);
 }
 
 .importaciones-subtitle {
   display: block;
-  font-size: 1.6rem;
-  color: #5656ff;
-  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-text-detail);
+  margin-top: 5px;
 }
 
-/* ===============================
-   Carrusel
-   =============================== */
 .carousel-container {
-  position: relative;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  height: 550px;
 }
 
 .carousel-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  perspective: 1500px;
+  width: 80%;
   position: relative;
-  height: 450px;
 }
 
-/* ===============================
-   Tarjetas tipo Coverflow
-   =============================== */
 .card {
   position: absolute;
-  top: 0;
-  width: 80%;
-  max-width: 500px;
-  height: 100%;
-  background-color: #ffffffcc;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
-  padding: 2rem;
+  width: 100%;
+  max-width: 900px;
+  height: 480px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
   opacity: 0;
-  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  background-color: var(--color-background);
 }
 
 .card-current {
+  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0) scale(1) rotateY(0deg);
-  z-index: 3;
+  z-index: 10;
 }
 
-.card-prev {
-  opacity: 0.7;
-  transform: translateX(-120%) scale(0.8) rotateY(30deg);
-  z-index: 2;
-}
-
+.card-prev,
 .card-next {
-  opacity: 0.7;
-  transform: translateX(120%) scale(0.8) rotateY(-30deg);
-  z-index: 2;
+  z-index: 5;
+  opacity: 0.5;
+
+  transform: translate(-65%, -50%) scale(0.8);
+}
+.card-next {
+  transform: translate(-35%, -50%) scale(0.8);
 }
 
-.card-hidden {
-  opacity: 0;
-  transform: translateX(0) scale(0.5) rotateY(0deg);
-  z-index: 1;
-}
-
-/* ===============================
-   Texto dentro de tarjeta
-   =============================== */
 .card-text {
-  text-align: center;
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-background);
 }
 
 .card-text h2 {
-  font-size: 1.8rem;
-  color: #b71c1c;
+  font-size: 1.2rem;
+  color: var(--color-primary);
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 5px;
 }
-
 .card-text h3 {
-  font-size: 1.4rem;
-  color: #5656ff;
+  font-size: 2rem;
+  color: var(--color-black);
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
-
 .card-text p {
-  font-size: 1rem;
-  color: #1e1e1c;
-  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
 }
 
-/* ===============================
-   Botón
-   =============================== */
-.card-button {
-  background-color: #b71c1c;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.card-button:hover {
-  background-color: #cd3d1f;
-}
-
-/* ===============================
-   Imagen de la tarjeta
-   =============================== */
 .card-image {
-  width: 100%;
-  max-width: 300px;
-  margin-top: 1rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* ===============================
-   Flechas
-   =============================== */
-.arrow-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #b71c1c;
-  color: #fff;
+.card-button {
+  background: var(--color-primary);
+  color: white;
+  padding: 12px 25px;
   border: none;
-  padding: 1rem 1.2rem;
-  border-radius: 50%;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
   cursor: pointer;
+  width: fit-content;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+.card-button:hover {
+  background-color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.arrow-button {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   font-size: 1.5rem;
-  transition: 0.3s;
-  z-index: 5;
+  cursor: pointer;
+  z-index: 20;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .arrow-button:hover {
-  background-color: #cd3d1f;
+  background-color: var(--color-black);
+  transform: scale(1.1);
 }
 
-.arrow-left {
-  left: -2rem;
-}
-
-.arrow-right {
-  right: -2rem;
-}
-
-/* ===============================
-   Indicadores
-   =============================== */
 .indicators {
-  display: flex;
-  gap: 10px;
-  margin-top: 2rem;
-  justify-content: center;
+  margin-top: 30px;
 }
 
 .indicator-dot {
-  width: 12px;
-  height: 12px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
   border-radius: 50%;
-  background-color: #bebefdff;
-  transition: all 0.3s ease;
+  margin: 0 5px;
+  transition: background-color 0.3s;
 }
 
 .indicator-dot.active {
-  background-color: #b71c1c;
+  background-color: var(--color-primary);
   transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+  .carousel-container {
+    height: 600px;
+  }
+  .card {
+    flex-direction: column-reverse;
+    height: auto;
+    max-width: 95%;
+  }
+  .card-image {
+    width: 100%;
+    height: 250px;
+    order: 1;
+  }
+  .card-text {
+    padding: 30px 20px;
+    order: 2;
+  }
+  .arrow-button {
+    display: none;
+  }
+
+  .card,
+  .card-prev,
+  .card-next {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    position: relative;
+  }
 }

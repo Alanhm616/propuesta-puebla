@@ -1,11 +1,17 @@
 import React, { useState } from "react";
+
+import ImportacionesModal from "./ImportacionesModal";
+
+import { FaFile } from "react-icons/fa";
 import "./CSS/Importaciones.css";
+
 import img1 from "../../assets/import1.jpg";
 import img2 from "../../assets/import2.jpg";
 import img3 from "../../assets/import3.jpg";
 
 const Importaciones = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const cards = [
     {
@@ -13,8 +19,8 @@ const Importaciones = () => {
       subtitle: "ONLINE IMPORTACIONES",
       text: "¿Deseas comprar ONLINE en USA y recibir en TODO México? ¡PUEDES IMPORTAR DESDE UN SOBRE HASTA MUEBLES!",
       button: {
-        text: "Ver Instructivo (PDF)",
-        link: "/docs/WEB_Compras_Online.pdf",
+        text: "Ver Instructivo",
+        link: "modal",
       },
       image: img1,
     },
@@ -40,10 +46,17 @@ const Importaciones = () => {
     },
   ];
 
-  const nextCard = () =>
-    setCurrentIndex((prev) => (prev + 1) % cards.length);
+  const nextCard = () => setCurrentIndex((prev) => (prev + 1) % cards.length);
   const prevCard = () =>
     setCurrentIndex((prev) => (prev - 1 + cards.length) % cards.length);
+
+  const handleButtonClick = (link) => {
+    if (link === "modal") {
+      setIsModalOpen(true);
+    } else {
+      window.open(link, "_blank", "noopener noreferrer");
+    }
+  };
 
   return (
     <div className="importaciones-container">
@@ -73,20 +86,22 @@ const Importaciones = () => {
                   <h2>{card.title}</h2>
                   <h3>{card.subtitle}</h3>
                   <p>{card.text}</p>
-                  <a
+
+                  <button
                     className="card-button"
-                    href={card.button.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={() => handleButtonClick(card.button.link)}
                   >
-                    {card.button.text}
-                  </a>
+                    {card.button.text === "Ver Instructivo" ? (
+                      <>
+                        <FaFile style={{ marginRight: "8px" }} />
+                        {card.button.text}
+                      </>
+                    ) : (
+                      card.button.text
+                    )}
+                  </button>
                 </div>
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="card-image"
-                />
+                <img src={card.image} alt={card.title} className="card-image" />
               </div>
             );
           })}
@@ -107,6 +122,11 @@ const Importaciones = () => {
           ></span>
         ))}
       </div>
+
+      <ImportacionesModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

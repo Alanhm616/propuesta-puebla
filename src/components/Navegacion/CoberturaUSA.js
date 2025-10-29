@@ -28,9 +28,7 @@ const EMBED_URLS = {
 
 // Función para generar los links de contacto (con mensaje pre-llenado)
 const getContactLinks = (phone) => {
-  const message = encodeURIComponent(
-    "Hola, me gustaría preguntar sobre sus servicios de envío."
-  );
+  const message = encodeURIComponent("");
   const cleanPhone = phone.replace(/\s/g, "").replace("+", "");
 
   return {
@@ -96,7 +94,7 @@ const sucursalesData = {
 
   centros: [
     {
-      state: "Estado de CALIFORNIA",
+      state: "ESTADO DE CALIFORNIA",
       centers: [
         { city: "CORONA, CA.", phone: "+1 951 254 5339" },
         { city: "ESTE de LOS ANGELES, CA.", phone: "+1 323 839 2415" },
@@ -244,7 +242,7 @@ const CoberturaUSA = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.8, delay: 0.2 } }}
           >
-            SUCURSALES Puebla-Express
+            SUCURSALES PUEBLA-EXPRESS
           </motion.h1>
         </div>
       </section>
@@ -269,7 +267,7 @@ const CoberturaUSA = () => {
             }`}
           >
             <div className="container">
-              <p>Centros de Envío</p>
+              <p>CENTROS DE ENVÍOS</p>
               <h2>{estado.state}</h2>
             </div>
           </div>

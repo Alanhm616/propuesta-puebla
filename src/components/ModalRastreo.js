@@ -6,9 +6,10 @@ const ModalRastreo = ({ open, onClose }) => {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={e => e.stopPropagation()}>
-        {/* Botón de cerrar */}
-        <button className="modal-close" onClick={onClose}>×</button>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close" onClick={onClose}>
+          ×
+        </button>
         <iframe
           src="/rastreador_cliente-gh-pages/index.html"
           title="Rastreo de Paquetes"
@@ -21,4 +22,3 @@ const ModalRastreo = ({ open, onClose }) => {
 };
 
 export default ModalRastreo;
-
